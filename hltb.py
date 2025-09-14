@@ -39,5 +39,5 @@ results = HowLongToBeat().search(search_term)
 
 data =[["Title", "Main Story", "Main+Extra", "Completionist"]]
 for result in results:
-    data.append([result.game_name, f"{int(result.main_story)}h {round(result.main_story%1*60)}m", f"{int(result.main_extra)}h {round(result.main_extra%1*60)}m", f"{int(result.completionist)}h {round(result.completionist%1*60)}m"])
+    data.append([f"\x1b]8;;{result.game_web_link}\x1b\\{result.game_name}\x1b]8;;\x1b\\", f"{int(result.main_story)}h {round(result.main_story%1*60)}m", f"{int(result.main_extra)}h {round(result.main_extra%1*60)}m", f"{int(result.completionist)}h {round(result.completionist%1*60)}m"])
 print_dynamic_table(data)
